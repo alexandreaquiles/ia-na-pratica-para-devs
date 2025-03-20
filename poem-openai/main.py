@@ -46,3 +46,10 @@ response = client.chat.completions.create(
 poem = response.choices[0].message.content
 print(poem)
 
+speech_file_path = "poem.mp3"
+response = openai.audio.speech.create(
+  model="tts-1",
+  voice="alloy",
+  input=poem
+)
+response.write_to_file(speech_file_path)
