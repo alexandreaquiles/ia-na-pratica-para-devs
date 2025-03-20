@@ -7,7 +7,8 @@ import os
 
 load_dotenv()
 
-model = init_chat_model("gpt-4o-mini", model_provider="openai", api_key=os.getenv("OPENAI_API_KEY"))
+#model = init_chat_model("gpt-4o-mini", model_provider="openai", api_key=os.getenv("OPENAI_API_KEY"))
+model = init_chat_model("gemini-2.0-flash", model_provider="google_genai", api_key=os.getenv("GEMINI_API_KEY"))
 
 template = ChatPromptTemplate([
     SystemMessage("""Você é um poeta escreve versos livres em português brasileiro.
